@@ -1,7 +1,2 @@
-Import-Module (Join-Path $PSScriptRoot 'GetType')
-Import-Module (Join-Path $PSScriptRoot 'SendDiscord') 
-Import-Module (Join-Path $PSScriptRoot 'TestCommand')
-Import-Module (Join-Path $PSScriptRoot 'TestDirectory')
-Import-Module (Join-Path $PSScriptRoot 'TestModule')
-Import-Module (Join-Path $PSScriptRoot 'GetSpecialFolder')
-Import-Module (Join-Path $PSScriptRoot 'UpdateEnvironment')
+Get-ChildItem "${PSScriptRoot}\modules" -Attributes Directory
+| ForEach-Object { Import-Module $_.FullName }
